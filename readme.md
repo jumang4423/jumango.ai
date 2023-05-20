@@ -8,11 +8,10 @@ jumango ai server for me, discord and API.
   - @jumango.ai <command name> <...args>
   - <
     - talk with ai
-  - echo
-    - check ai is alive
   - <<
     - long-term memorization of the given prompt
-
+  - echo
+    - check ai is alive
 
 ## personal note
 

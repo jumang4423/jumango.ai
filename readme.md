@@ -10,6 +10,8 @@ jumango ai server for me, discord and API.
     - talk with ai
   - <<
     - long-term memorization of the given prompt
+  - * 
+    - forget previous conversations
   - echo
     - check ai is alive
 

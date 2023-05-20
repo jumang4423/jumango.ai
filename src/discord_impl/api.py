@@ -3,10 +3,22 @@ from dotenv import load_dotenv
 import discord
 import os
 from src.ai_chat.chat import chat_response
+from src.chroma.db import remember, recall
+from src.ai_chat.chat import erase_memory
 
 # env load
 load_dotenv()
 DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
+
+def help():
+    return """```
+jumango.ai help
+commands:
+  (echo) repeat what you say
+  (<)    chat with jumango
+  (<<)   remember what you say
+  (*)    forget previous memory
+```"""
 
 class MyClient(discord.Client):
     def mention_str(self):
@@ -31,6 +43,14 @@ class MyClient(discord.Client):
         elif command == "<":
             bot_response = chat_response(' '.join(args))
             await message.channel.send(bot_response)
+        elif command == "<<":
+            remember(' '.join(args))
+            await message.channel.send("✨ memorized")
+        elif command == "*":
+            erase_memory()
+            await message.channel.send("💨 erased")
+        else:
+            await message.channel.send(help())
 
 # init bot
 intents = discord.Intents.default()

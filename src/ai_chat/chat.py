@@ -9,7 +9,7 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # states
 HISTORY_MAX = 4
-RECALL_MAX = 2
+RECALL_MAX = 1
 histories = []
 
 def chat_response(prompt):
@@ -20,7 +20,7 @@ def chat_response(prompt):
         for i in range(len(histories) - HISTORY_MAX):
             histories.pop(0)
 
-    with_system = [{ 'role': "system", 'content': "you are a jumango, creative nerd hacker. your answer always very very short with emoji." }]
+    with_system = [{ 'role': "system", 'content': "you are a jumango, creative nerd hacker. you answers always very shortly." }]
     recalls = recall(prompt, RECALL_MAX)
     for r in recalls:
         with_system.append({ 'role': "assistant", 'content': r })

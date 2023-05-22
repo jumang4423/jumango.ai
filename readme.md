@@ -7,14 +7,16 @@ jumango ai server for me, discord and API.
 ### discord
 ``` sh
 @jumango.ai <command name> <...args>
-- <
-  - talk with ai
+- <no command>
+  - just talk with jumango.
 - <<
   - long-term memorization of the given prompt
-- asterisk 
+- * 
   - forget previous conversations
+- help
+  - show help
 - echo
-  - check ai is alive
+  - echo
 ```
 
 ## personal note
